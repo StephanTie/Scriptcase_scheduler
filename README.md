@@ -56,5 +56,22 @@ If have made the grids like grid_categories available for scheduling by changing
     5. Generate applications
 </pre>
 
+**Functionality:**
+
+**Menu**
+![Menu](menu.png)
+
+**Add Job**
+![form_job](form_job.png)
+
+**Add Job Schedule**
+![form_job_schedule](form_job_schedule.png)
+
+**Add Job Schedule**
+![grid_jobs_executed](jobs_executed.png)
+
+**Mail List Scheduler**
+
+**Start Job Scheduler one time**
 
    
