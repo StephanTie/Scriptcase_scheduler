@@ -22,7 +22,7 @@ It's essential to note that this scheduler only functions when the security is t
 
 I use the crontab scheduler on Ubuntu Linux. For other environments, you will need to find alternatives to crontab (e.g., Task Scheduler on Windows).
 
-I've provided a functional setup based on Scriptcase's security example application, scheduling reports based on categories, products, and customers. 
+I've provided a working functional setup based on Scriptcase's security example application, scheduling reports based on categories, products, and customers. 
 It is running with MySQL.
 
 **Installation Steps:**
@@ -67,11 +67,22 @@ If have made the grids like grid_categories available for scheduling by changing
 **Add Job Schedule**
 ![form_job_schedule](form_job_schedule.png)
 
-**Add Job Schedule**
+**Executed Scheduled Jobs**
 ![grid_jobs_executed](jobs_executed.png)
+
+**Settings Job Scheduler**
+Please go through the list and change all the settings where set Parameter starts with sc_api and Set Value mentions CHANGETHIS
 
 **Mail List Scheduler**
 
 **Start Job Scheduler one time**
+For testing purposes
+
+**Encountering problems ?**
+Check the following
+- Is your ip address correct
+- Is Job_schedule active or begin and end date correct
+- Security off and added the right functions
+- Are the rights correct set for the programs to write the reports
 
    
