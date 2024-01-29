@@ -10,7 +10,7 @@ Scheduler for Scriptcase grid reports (in HTML or PDF format) where the results 
     - Jobs: Create an additional WHERE clause.
     - Schedule: Select a period during which the schedule is active, embed images, and send it to a mailing list.
 
-Date: 27–12–2023
+Date: 27–12–2023   Updated: 29-1-2024
 
 **Introduction**
 
@@ -27,9 +27,9 @@ It is running with MySQL.
 
 **Installation Steps:**
 
-1. Import this File in MYSQL (Download https://deam-scriptcase.s3.eu-west-1.amazonaws.com/schedulerexample/scheduler.sql)   (now links work!)
-2. Import within scriptcase development environment this backup. (download https://deam-scriptcase.s3.eu-west-1.amazonaws.com/schedulerexample/sc9_bkp_Scheduler_20240104-181844.zip)
-3. Unpack scheduler_libraries in a temporary folder. (download https://deam-scriptcase.s3.eu-west-1.amazonaws.com/schedulerexample/scheduler_libraries.zip)
+1. Import this File in MYSQL (Download [https://deam-scriptcase.s3.eu-west-1.amazonaws.com/schedulerexample/scheduler.sql])   (now links work!)
+2. Import within scriptcase development environment this backup. (download [https://deam-scriptcase.s3.eu-west-1.amazonaws.com/schedulerexample/sc9_202401291602_export_Scheduler3.zip])
+3. Unpack scheduler_libraries in a temporary folder. (download [https://deam-scriptcase.s3.eu-west-1.amazonaws.com/schedulerexample/scheduler_libraries.zip])
 As I can not test this procedure please inform me if it works. Copy the subfolder to your development without overwriting.
 In my case the information is in location C:\Program Files\NetMake\v9-php81\wwwroot\scriptcase\app\Scheduler\_lib\libraries
 Enable every library in development (
@@ -40,7 +40,7 @@ Check if the output is found in overview 'Executed Scheduled Jobs'
 7. In Production On Ubuntu Linux in crontab make an entry (crontab -e) with this line: (ensure you change 172.20.0.11 and use the right ip addres for this )
 On windows you have to use taskmanager (not tested yet)
 <pre>
-*/5 * * * * /usr/bin/curl 'http://172.20.0.11/blank_job_scheduler/blank_job_scheduler.php?scope=Report&client_id=0oa10XXXXMZhouRW357' 2>&1 | logger  -t 'blank_job_scheduler'
+*/5 * * * * sudo -u daemon /usr/bin/curl 'http://172.20.0.11/blank_job_scheduler/blank_job_scheduler.php?scope=Report&client_id=0oa10XXXXMZhouRW357' 2>&1 | logger  -t 'blank_job_scheduler'
 </pre>
 ( every 5 minutes the scheduler checks if programs should be started. In this case you can not have a tasks scheduled at 12:01 but only right at the 5 minutes interval).
 
